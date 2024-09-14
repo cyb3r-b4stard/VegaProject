@@ -1,4 +1,4 @@
-#include "include/fact.h"
+#include "fact.h"
 
 int factorial(int k) {
     if (k == 0) return 1;

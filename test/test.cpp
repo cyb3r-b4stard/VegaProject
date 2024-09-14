@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "fact.cpp"
+#include "../include/fact.h"
 
 TEST(TestFactorial, TestPositive) {
     EXPECT_EQ(factorial(1), 1);

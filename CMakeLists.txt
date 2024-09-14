@@ -8,9 +8,10 @@ endif()
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 add_executable(vega_main ${CMAKE_SOURCE_DIR}/src/main.cpp ${CMAKE_SOURCE_DIR}/src/fact.cpp)
-target_include_directories(vega_main PRIVATE ${CMAKE_SOURCE_DIR}/src)
-target_link_directories(vega_main PRIVATE ${CMAKE_SOURCE_DIR}/src)
+target_link_directories(vega_main PUBLIC ${CMAKE_SOURCE_DIR}/src)
 
 ### TESTING 
 
@@ -26,13 +27,11 @@ endif()
 
 FetchContent_Declare(
     googletest
-    # Specify the commit you depend on and update it regularly.
     URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.zip
     )
 FetchContent_MakeAvailable(googletest)
 
-add_executable(vega_test ${CMAKE_SOURCE_DIR}/test/test.cpp)
-target_include_directories(vega_test PRIVATE ${CMAKE_SOURCE_DIR}/src)
-target_link_directories(vega_test PRIVATE ${CMAKE_SOURCE_DIR}/src)
+add_executable(vega_test ${CMAKE_SOURCE_DIR}/test/test.cpp ${CMAKE_SOURCE_DIR}/src/fact.cpp)
+target_link_directories(vega_test PUBLIC ${CMAKE_SOURCE_DIR}/src)
 target_link_libraries(vega_test GTest::gtest_main)
 gtest_discover_tests(vega_test)

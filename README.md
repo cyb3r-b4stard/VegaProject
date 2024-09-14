@@ -1,6 +1,6 @@
-# Final project in Vega Foundation
-
-## C++ for Algorithmic Trading and Quantitative Finance
+# Final project in Vega Foundation Course "C++ for Algorithmic Trading and Quantitative Finance"
+> Either the well was very deep, or she fell very slowly, for she had plenty of time as she went down to look about her and to wonder what was going to happen next
+> Lewis Carroll — Alice's Adventures in Wonderland
 
 ### Project Structure
 

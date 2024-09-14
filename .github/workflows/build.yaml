@@ -34,8 +34,7 @@ jobs:
       with:
         name: binaries
         
-    - run: chmod +x ${{github.workspace}}/build/vega_test
-    
+    - run: chmod +x ${{github.workspace}}/vega_test
+
     - name: Test
-      working-directory: ${{github.workspace}}/build
-      run: ctest -C ${{env.BUILD_TYPE}}
+      run: ${{github.workspace}}/vega_test

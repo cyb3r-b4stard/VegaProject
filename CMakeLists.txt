@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(vega_main ${CMAKE_SOURCE_DIR}/src/main.cpp)
 
-### TESTING ###
+### TESTING 
 
 enable_testing()
 

@@ -15,6 +15,12 @@ jobs:
     needs: setup
 
     steps:
+    - uses: actions/upload-artifact@v4
+      with:
+        name: binaries
+        path: |
+          build/vega_main
+          buid/vega_test
     - name: Configure CMake
       run: cmake -B build
     
@@ -27,6 +33,9 @@ jobs:
     needs: build
 
     steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: binaries
     - name: Test
       working-directory: build
-      run: ctest 
+      run: chmod +x vega_test && ./vega_test

@@ -7,10 +7,10 @@
 
     .
     ├── build                   # Compiled files 
-    ├── docs                    # Generated documentation
     ├── include                 # Header files
     ├── src                     # Source files 
     ├── test                    # Automated tests
-    ├── tools                   # Tools and utilities
+    ├── benchmark               # Automated benchmarks
+    ├── docs                    # Generated documentation
     ├── CMakeLists.txt
     └── README.md           

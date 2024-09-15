@@ -1,3 +1,9 @@
 #pragma once
 
-int factorial(int);
+/**
+ * @brief Calculates n!
+ * 
+ * @param n 
+ * @return int 
+ */
+int factorial(int n);

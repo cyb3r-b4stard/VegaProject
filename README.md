@@ -7,6 +7,7 @@
 
     .
     ├── build                   # Compiled files 
+    ├── docs                    # Generated documentation
     ├── include                 # Header files
     ├── src                     # Source files 
     ├── test                    # Automated tests

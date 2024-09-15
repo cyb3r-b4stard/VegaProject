@@ -24,6 +24,7 @@ jobs:
         path: |
             ${{github.workspace}}/build/vega_main
             ${{github.workspace}}/build/vega_test
+            ${{github.workspace}}/build/vega_benchmark
 
   test:
     runs-on: ubuntu-latest

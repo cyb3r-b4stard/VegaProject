@@ -27,7 +27,8 @@ endif()
 
 FetchContent_Declare(
     googletest
-    URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.zip
+    GIT_REPOSITORY https://github.com/google/googletest.git
+    GIT_TAG main
     )
 FetchContent_MakeAvailable(googletest)
 
@@ -35,3 +36,19 @@ add_executable(vega_test ${CMAKE_SOURCE_DIR}/test/test.cpp ${CMAKE_SOURCE_DIR}/s
 target_link_directories(vega_test PUBLIC ${CMAKE_SOURCE_DIR}/src)
 target_link_libraries(vega_test GTest::gtest_main)
 gtest_discover_tests(vega_test)
+
+
+### BENCHMARKING
+
+set(BENCHMARK_ENABLE_TESTING NO)
+
+FetchContent_Declare(
+    googlebenchmark
+    GIT_REPOSITORY https://github.com/google/benchmark.git
+    GIT_TAG main
+    )
+FetchContent_MakeAvailable(googlebenchmark)
+
+add_executable(vega_benchmark ${CMAKE_SOURCE_DIR}/benchmark/benchmark.cpp  ${CMAKE_SOURCE_DIR}/src/fact.cpp)
+target_link_directories(vega_benchmark PUBLIC ${CMAKE_SOURCE_DIR}/src)
+target_link_libraries(vega_benchmark benchmark::benchmark_main)

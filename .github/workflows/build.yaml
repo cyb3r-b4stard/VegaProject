@@ -1,6 +1,6 @@
 name: Build
 
-on: [push]
+on: push
 
 env:
   BUILD_TYPE: Release
@@ -38,3 +38,17 @@ jobs:
 
     - name: Test
       run: ${{github.workspace}}/vega_test
+
+  benchmark:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - uses: actions/download-artifact@v4
+      with:
+        name: binaries
+
+    - run: chmod +x ${{github.workspace}}/vega_benchmark
+
+    - name: Benchmark
+      run: ${{github.workspace}}/vega_benchmark

@@ -3,7 +3,7 @@
 /**
  * @brief Calculates n!
  * 
- * @param n 
- * @return int 
+ * @param n - parameter
+ * @return int - n!
  */
 int factorial(int n);

@@ -65,6 +65,8 @@ find_package(Python3 COMPONENTS Development Interpreter REQUIRED)
 include(${SWIG_USE_FILE})
 include_directories(${Python3_INCLUDE_DIRS})
 
+### ADD HFT_CPP AS A SEPARATE LIBRARY
+
 add_library(hft_cpp ${CMAKE_SOURCE_DIR}/hft_cpp/data_loader.cpp)
 target_link_libraries(vega_main hft_cpp)
 

@@ -1,4 +1,7 @@
 build/
-.vscode/
+database/
 docs/html
 docs/latex
+.vscode/
+
+*.csv
